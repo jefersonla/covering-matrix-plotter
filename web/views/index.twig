@@ -108,7 +108,12 @@
               map: map,
               icon: arduinoIcon,
               title: name,
-              label: name
+              label: {
+                text: name,
+                fontWeight: 'bold',
+                fontFamily: '"Courier New", Courier,Monospace',
+                color: 'white'
+              }
             });
             
             marker.addListener('click', function(evt) {
@@ -129,7 +134,12 @@
               map: map,
               icon: raspIcon,
               title: name,
-              label: name      
+              label: {
+                text: name,
+                fontWeight: 'bold',
+                fontFamily: '"Courier New", Courier,Monospace',
+                color: 'white'
+              }
             });
 
             var WIFI_RADIUS = 50;
@@ -190,7 +200,7 @@
           map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
         }
       </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4_217fZrVD4vV2fuLw3P4S7wVVAFLBiA&callback=initMap&style=feature:poi|visibility:off"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4_217fZrVD4vV2fuLw3P4S7wVVAFLBiA&callback=initMap"></script>
     </div>
   </div> <!-- row -->
    <div class="alert alert-info text-center" style="margin-top: 20px;" role="alert">
