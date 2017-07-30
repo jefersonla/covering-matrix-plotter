@@ -45,9 +45,15 @@
             var topologyNameDom = document.getElementById("topology-name");
             topologyNameDom.innerText = topology.topologyName;
 
-            // ADD MAP MARKS
+            // ADD DEVICE MAP MARKS
             for(var i = 0; i < topology.listDevices.length; i++){
-              window.addMarker(topology.listDevices[i].coordinates.latitude, topology.listDevices[i].coordinates.longitude);
+              window.addMarker(topology.listDevices[i].coordinates.latitude,
+                topology.listDevices[i].coordinates.longitude);
+            }
+            // ADD GATEWAY MAP MARKS
+            for(var i = 0; i < topology.listGateways.length; i++){
+              window.addMarkerRange(topology.listGateways[i].coordinates.latitude,
+                topology.listGateways[i].coordinates.longitude);
             }
 
           };
@@ -68,6 +74,9 @@
         function initMap() {
           var salvador = {lat: -13.002418, lng: -38.5102597};
           var markers = [];
+
+          var arduinoIcon = "/arduino_mark.png";
+          var raspIcon = "/rasp_mark.png";
           
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
@@ -76,10 +85,25 @@
 
           window.addMarker = function(latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
+            
             var marker = new google.maps.Marker({
               position: posicao,
-              map: map
+              map: map,
+              icon: arduinoIcon
             });
+            
+            markers.push(marker);
+          };
+
+          window.addMarkerRange = function(latitude, longitude){
+            var posicao =  { lat: latitude, lng: longitude };
+            
+            var marker = new google.maps.Marker({
+              position: posicao,
+              map: map,
+              icon: raspIcon            
+            });
+
             markers.push(marker);
           };
 
