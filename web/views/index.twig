@@ -76,9 +76,23 @@
           var salvador = {lat: -13.002418, lng: -38.5102597};
           var markers = [];
 
-          var arduinoIcon = "/images/arduino_mark_small.png";
-          var raspIcon = "/images/rasp_mark_small.png";
+          var arduinoIconUrl = "/images/arduino_mark_small.png";
+          var raspIconUrl = "/images/rasp_mark_small.png";
           
+          var arduinoIcon = {
+            url: arduinoIconUrl,
+            size: new google.maps.Size(50, 33),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(25, 16)
+          };
+
+          var raspIcon = {
+            url: arduinoIconUrl,
+            size: new google.maps.Size(70, 50),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(35, 25)
+          };
+
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
             center: salvador
@@ -138,11 +152,11 @@
           var icons = {
             device: {
               name: 'Device',
-              icon: arduinoIcon
+              icon: arduinoIconUrl
             },
             gateway: {
               name: 'Gateway',
-              icon: raspIcon
+              icon: raspIconUrl
             }
           };
 
@@ -151,7 +165,7 @@
             var name = type.name;
             var icon = type.icon;
             var div = document.createElement('div');
-            div.innerHTML = '<img src="' + icon + '"> ' + name;
+            div.innerHTML = '<img src="' + icon + '"> ' + "<b>" + name + "</b>";
             legend.appendChild(div);
           }
 
