@@ -45,9 +45,20 @@
             var topologyNameDom = document.getElementById("topology-name");
             topologyNameDom.innerText = topology.topologyName;
 
+            // ADD MAP MARKS
+
           };
 
           reader.readAsText(file);  
+        });
+        $("#input-1").on('fileremoved', function(event, id, index) {
+          console.log("File removed");
+
+          var topologyNameDom = document.getElementById("topology-name");
+          topologyNameDom.innerText = topology.topologyName;
+
+          // REMOVE MAP MARKS
+          
         });
       </script>
     </div>
