@@ -85,14 +85,16 @@
             url: arduinoIconUrl,
             size: new google.maps.Size(50, 33),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(25, 16)
+            anchor: new google.maps.Point(25, 16),
+            labelOrigin: new google.maps.Point(25, -10)
           };
 
           var raspIcon = {
             url: raspIconUrl,
             size: new google.maps.Size(70, 50),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(35, 25)
+            anchor: new google.maps.Point(35, 25),
+            labelOrigin: new google.maps.Point(35, -10)
           };
 
           var map = new google.maps.Map(document.getElementById('map'), {
