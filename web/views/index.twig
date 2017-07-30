@@ -22,6 +22,8 @@
       <h3><span class="glyphicon glyphicon-link"></span> Topology Loaded </h3>
       <div>
 
+        <h3 id="topology-name"> &lt; Toplogy Name &gt; </h3> 
+
         PUT A MAP HERE!
 
       </div>
@@ -30,13 +32,15 @@
           console.log('File loaded triggered');
           console.log('Topology File Loaded');
 
-          console.log('agora vai');
-          window.test_index = index;
-          window.test_file = file;
-          window.test_event = event;
-          window.test_previewId = previewId;
-          window.test_reader = reader;
+          reader.onload = function(e) {
+            var topology = JSON.parse(reader.result);
+            window.test_topology = topology;
+            console.log(reader.result);
 
+            
+          };
+
+          reader.readAsText(file);  
         });
       </script>
     </div>
