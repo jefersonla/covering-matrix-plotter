@@ -15,7 +15,7 @@
       </ul>
       <div>
         <label class="control-label">Select File</label>
-        <input id="input-1" name="input1[]" type="file" class="file file-loading" data-allowed-file-extensions='["json"]' data-show-preview="false">
+        <input id="input-1" name="input1[]" type="file" class="file file-loading" data-allowed-file-extensions='["json"]' data-show-preview="false" data-show-upload="false">
       </div>
     </div>
     <div class="col-md-12">
@@ -26,16 +26,12 @@
 
       </div>
       <script>
-        $("#input-1").on('filepreupload', function(event, data, previewId, index) {
-          var form = data.form,
-              files = data.files,
-              extra = data.extra,
-              response = data.response, reader = data.reader;
-          
-          console.log('File pre upload triggered');
+        $("#input-1").on('fileloaded', function(event, file, previewId, index, reader) {
+          console.log('File loaded triggered');
           console.log('Topology File Loaded');
-          console.log(files);
+          console.log(file);
 
+          
 
         });
       </script>
