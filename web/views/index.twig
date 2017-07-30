@@ -51,7 +51,7 @@
 
           reader.readAsText(file);  
         });
-        $("#input-1").on('fileremoved', function(event, id, index) {
+        $("#input-1").on('filereset', function(event) {
           console.log("File removed");
 
           var topologyNameDom = document.getElementById("topology-name");
