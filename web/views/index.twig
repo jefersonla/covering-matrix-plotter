@@ -111,6 +111,10 @@
               label: name
             });
             
+            marker.addListener('click', function() {
+              console.log('marker device clicked!'); 
+            });
+
             markers.push(marker);
           };
 
@@ -128,6 +132,10 @@
             });
 
             var WIFI_RADIUS = 50;
+
+            marker.addListener('click', function() {
+              console.log('marker gateway clicked!'); 
+            });
 
             var rangeCircle = new google.maps.Circle({
               center: posicao,
