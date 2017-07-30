@@ -48,12 +48,14 @@
 
             // ADD DEVICE MAP MARKS
             for(var i = 0; i < topology.listDevices.length; i++){
-              window.addMarker(topology.listDevices[i].coordinates.latitude,
+              window.addMarker(topology.listDevices[i].name,
+                topology.listDevices[i].coordinates.latitude,
                 topology.listDevices[i].coordinates.longitude);
             }
             // ADD GATEWAY MAP MARKS
             for(var i = 0; i < topology.listGateways.length; i++){
-              window.addMarkerRange(topology.listGateways[i].coordinates.latitude,
+              window.addMarkerRange(topology.listGateways[i].name,
+                topology.listGateways[i].coordinates.latitude,
                 topology.listGateways[i].coordinates.longitude);
             }
 
@@ -98,13 +100,14 @@
             center: salvador
           });
 
-          window.addMarker = function(latitude, longitude){
+          window.addMarker = function(name, latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
             
             var marker = new google.maps.Marker({
               position: posicao,
               map: map,
-              icon: arduinoIcon
+              icon: arduinoIcon,
+              title: name
             });
             
             markers.push(marker);
@@ -112,13 +115,14 @@
 
           var ranges = [];
 
-          window.addMarkerRange = function(latitude, longitude){
+          window.addMarkerRange = function(name, latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
             
             var marker = new google.maps.Marker({
               position: posicao,
               map: map,
-              icon: raspIcon            
+              icon: raspIcon,
+              title: name            
             });
 
             var WIFI_RADIUS = 50;
