@@ -29,9 +29,9 @@
         $("#input-1").on('fileloaded', function(event, file, previewId, index, reader) {
           console.log('File loaded triggered');
           console.log('Topology File Loaded');
-          console.log(reader);
+          console.log(file);
 
-          window.test = reader;
+          window.test = FileReader.readAsText(file);
 
         });
       </script>
