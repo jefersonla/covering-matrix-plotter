@@ -111,8 +111,9 @@
               label: name
             });
             
-            marker.addListener('click', function() {
+            marker.addListener('click', function(evt) {
               console.log('marker device clicked!'); 
+              console.log(evt);
             });
 
             markers.push(marker);
@@ -133,8 +134,9 @@
 
             var WIFI_RADIUS = 50;
 
-            marker.addListener('click', function() {
-              console.log('marker gateway clicked!'); 
+            marker.addListener('click', function(evt) {
+              console.log('marker gateway clicked!');
+              console.log(evt);
             });
 
             var rangeCircle = new google.maps.Circle({
