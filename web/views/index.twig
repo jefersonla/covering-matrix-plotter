@@ -97,12 +97,13 @@
 
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
-            center: salvador,
-            styles: {
-              featureType: 'poi.business',
-              stylers: [{visibility: 'off'}]
-            }
+            center: salvador
           });
+
+          map.setOptions({styles: {
+            featureType: 'poi.business',
+            stylers: [ { visibility: 'off' } ]
+          }});
 
           window.addMarker = function(name, latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
