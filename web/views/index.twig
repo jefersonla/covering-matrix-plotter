@@ -46,6 +46,9 @@
             topologyNameDom.innerText = topology.topologyName;
 
             // ADD MAP MARKS
+            for(int i = 0; i < topology.listDevices.length; i++){
+              window.addMarker(topology.listDevices[i].coordinates.latitude, topology.listDevices[i].coordinates.longitude);
+            }
 
           };
 
@@ -69,10 +72,13 @@
             center: salvador
           });
 
-          var marker = new google.maps.Marker({
-            position: salvador,
-            map: map
-          });
+          window.addMarker = function(latitude, longitude){
+            var posicao =  { lat: latitude, lng: longitude };
+            var marker = new google.maps.Marker({
+              position: posicao,
+              map: map
+            });
+          }
         }
       </script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4_217fZrVD4vV2fuLw3P4S7wVVAFLBiA&callback=initMap"></script>
