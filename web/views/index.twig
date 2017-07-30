@@ -37,7 +37,14 @@
             window.test_topology = topology;
             console.log(reader.result);
 
-            
+            if(topology === null || topology.topologyName === ""){
+              alert("Not a topology file!");
+              return;
+            }
+
+            var topologyNameDom = document.getElementById("topology-name");
+            topologyNameDom.innerText = topology.topologyName;
+
           };
 
           reader.readAsText(file);  
