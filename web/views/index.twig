@@ -100,11 +100,6 @@
             center: salvador
           });
 
-          map.setOptions({styles: {
-            featureType: 'poi.business',
-            stylers: [ { visibility: 'off' } ]
-          }});
-
           window.addMarker = function(name, latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
             
@@ -195,7 +190,7 @@
           map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
         }
       </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4_217fZrVD4vV2fuLw3P4S7wVVAFLBiA&callback=initMap"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4_217fZrVD4vV2fuLw3P4S7wVVAFLBiA&callback=initMap&style=feature:poi|visibility:off"></script>
     </div>
   </div> <!-- row -->
    <div class="alert alert-info text-center" style="margin-top: 20px;" role="alert">
