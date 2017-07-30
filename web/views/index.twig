@@ -17,9 +17,6 @@
         <label class="control-label">Select File</label>
         <input id="input-1" name="input1[]" type="file" class="file file-loading" data-allowed-file-extensions='["json"]' data-show-preview="false">
       </div>
-      <div  class="spacing-buttons">
-        <button type="button" class="btn btn-success"> <b> Load Topology </b> </button>
-      </div>
     </div>
     <div class="col-md-12">
       <h3><span class="glyphicon glyphicon-link"></span> Topology Loaded </h3>
@@ -28,6 +25,12 @@
         PUT A MAP HERE!
 
       </div>
+      <script>
+        $("#input-1").on('fileloaded', function(event, file, previewId, index, reader) {
+          console.log("Topology File Loaded");
+          console.log(file);
+        });
+      </script>
     </div>
   </div> <!-- row -->
    <div class="alert alert-info text-center" role="alert">
