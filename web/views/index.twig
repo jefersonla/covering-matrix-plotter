@@ -61,11 +61,13 @@
           topologyNameDom.innerText = "<Topology Name>";
 
           // REMOVE MAP MARKS
+          window.removeMarkers();
 
         });
 
         function initMap() {
           var salvador = {lat: -13.002418, lng: -38.5102597};
+          var markers = [];
           
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
@@ -78,7 +80,15 @@
               position: posicao,
               map: map
             });
-          }
+            markers.push(marker);
+          };
+
+          window.removeMarkers = function(){
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+              }
+            }
+          };
         }
       </script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4_217fZrVD4vV2fuLw3P4S7wVVAFLBiA&callback=initMap"></script>
