@@ -24,7 +24,7 @@
 
         <h3 id="topology-name"> &lt;Topology Name&gt; </h3> 
 
-        PUT A MAP HERE!
+        <div id="map"> PUT A MAP HERE! </div>
 
       </div>
       <script>
@@ -60,7 +60,22 @@
           // REMOVE MAP MARKS
 
         });
+
+        function initMap() {
+          var salvador = {lat: -13.002418, lng: -38.5102597};
+          
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 6,
+            center: salvador
+          });
+
+          var marker = new google.maps.Marker({
+            position: salvador,
+            map: map
+          });
+        }
       </script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
     </div>
   </div> <!-- row -->
    <div class="alert alert-info text-center" role="alert">
