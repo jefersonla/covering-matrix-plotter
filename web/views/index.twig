@@ -96,6 +96,8 @@
             markers.push(marker);
           };
 
+          var ranges = [];
+
           window.addMarkerRange = function(latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
             
@@ -105,12 +107,29 @@
               icon: raspIcon            
             });
 
+            var WIFI_RADIUS = 50;
+
+            var rangeCircle = new google.maps.Circle({
+              center: posicao,
+              draggable: false,
+              editable: false,
+              fillColor: '#004de8',
+              fillOpacity: 0.27,
+              map: map,
+              radius: WIFI_RADIUS,
+              strokeColor: '#004de8',
+              strokeOpacity: 0.62,
+              strokeWeight: 1
+            });
+
             markers.push(marker);
+            ranges.push(rangeCircle);
           };
 
           window.removeMarkers = function(){
             for (var i = 0; i < markers.length; i++) {
               markers[i].setMap(null);
+              ranges[i].setMap(null);
             }
           };
 
