@@ -29,9 +29,13 @@
         $("#input-1").on('fileloaded', function(event, file, previewId, index, reader) {
           console.log('File loaded triggered');
           console.log('Topology File Loaded');
-          console.log(file);
 
-          window.test = reader.readAsText(file);
+          console.log('agora vai');
+          window.test_index = index;
+          window.test_file = file;
+          window.test_event = event;
+          window.test_previewId = previewId;
+          window.test_reader = reader;
 
         });
       </script>
