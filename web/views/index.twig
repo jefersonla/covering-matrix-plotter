@@ -46,7 +46,7 @@
             topologyNameDom.innerText = topology.topologyName;
 
             // ADD MAP MARKS
-            for(int i = 0; i < topology.listDevices.length; i++){
+            for(var i = 0; i < topology.listDevices.length; i++){
               window.addMarker(topology.listDevices[i].coordinates.latitude, topology.listDevices[i].coordinates.longitude);
             }
 
