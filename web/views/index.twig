@@ -69,7 +69,7 @@
                 for(var i = 0; i < mapDivElements.length; i++){
                   var divDom = mapDivElements[i];
                   if((divDom.innerText.indexOf("Dev") === 0 || divDom.innerText.indexOf("Gateway") === 0) &&
-                    (divDom[0].classList[0] !== undefined && divDom[0].classList[0] === "label-stroke")){
+                    (divDom.classList[0] !== undefined && divDom.classList[0] === "label-stroke")){
                     divDom.classList.add("label-stroke");
                     window.countMarks = window.countMarks - 1;
                   }
