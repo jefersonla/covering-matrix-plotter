@@ -65,7 +65,7 @@
                 clearInterval(addStrokeInterval);
                 console.log("Stoping stroke label");
               } else {
-                console.log("Putting stroke label");
+                console.log("Putting stroke label left" + window.countMarks);
                 var mapDom = document.getElementById("map");
                 var mapDivElements = mapDom.getElementsByTagName("div");
                 for(var i = 0; i < mapDivElements.length; i++){
