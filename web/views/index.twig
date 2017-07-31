@@ -63,9 +63,9 @@
             var mapDom = document.getElementById("map");
             var mapDivElements = mapDom.getElementsByTagName("div");
             for(var i = 0; i < mapDivElements.length; i++){
-              var t = mapDivElements[i];
-              if(t.innerText.indexOf("Dev") === 0 || t.innerText.indexOf("Gateway") === 0){
-                t.classList.add("label-stroke");
+              var divDom = mapDivElements[i];
+              if(divDom.innerText.indexOf("Dev") === 0 || divDom.innerText.indexOf("Gateway") === 0){
+                divDom.classList.add("label-stroke");
               }
             }
           };
