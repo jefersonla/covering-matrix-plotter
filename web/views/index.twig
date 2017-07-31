@@ -137,11 +137,6 @@
 
           window.addMarker = function(name, latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
-            
-            var divNova = document.createElement("div"); 
-            divNova.classList.add("label-stroke");
-            var conteudoNovo = document.createTextNode(name); 
-            divNova.appendChild(conteudoNovo);
 
             var marker = new google.maps.Marker({
               position: posicao,
@@ -149,7 +144,7 @@
               icon: arduinoIcon,
               title: name,
               label: {
-                text: divNova,
+                text: name,
                 fontWeight: 'bold',
                 fontFamily: '"Courier New", Courier,Monospace',
                 color: 'blue'
@@ -168,11 +163,6 @@
 
           window.addMarkerRange = function(name, latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
-            
-            var divNova = document.createElement("div"); 
-            divNova.classList.add("label-stroke");
-            var conteudoNovo = document.createTextNode(name); 
-            divNova.appendChild(conteudoNovo);
 
             var marker = new google.maps.Marker({
               position: posicao,
@@ -180,7 +170,7 @@
               icon: raspIcon,
               title: name,
               label: {
-                text: divNova,
+                text: name,
                 fontWeight: 'bold',
                 fontFamily: '"Courier New", Courier,Monospace',
                 color: 'green'
