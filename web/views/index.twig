@@ -60,14 +60,22 @@
             }
 
             // ADD STROKE TO MARKS
-            var mapDom = document.getElementById("map");
-            var mapDivElements = mapDom.getElementsByTagName("div");
-            for(var i = 0; i < mapDivElements.length; i++){
-              var divDom = mapDivElements[i];
-              if(divDom.innerText.indexOf("Dev") === 0 || divDom.innerText.indexOf("Gateway") === 0){
-                divDom.classList.add("label-stroke");
+            var addStrokeInterval = setInterval(function(){
+              if(window.countMarks == 0){
+                clearInterval(addStrokeInterval);
+              } else {
+                var mapDom = document.getElementById("map");
+                var mapDivElements = mapDom.getElementsByTagName("div");
+                for(var i = 0; i < mapDivElements.length; i++){
+                  var divDom = mapDivElements[i];
+                  if((divDom.innerText.indexOf("Dev") === 0 || divDom.innerText.indexOf("Gateway") === 0) &&
+                    (divDom[0].classList[0] !== undefined && divDom[0].classList[0] === "label-stroke")){
+                    divDom.classList.add("label-stroke");
+                    window.countMarks = window.countMarks - 1;
+                  }
+                }
               }
-            }
+            }, 2000);
           };
 
           reader.readAsText(file);  
@@ -90,6 +98,8 @@
           var arduinoIconUrl = "/images/arduino_mark_small.png";
           var raspIconUrl = "/images/rasp_mark_small.png";
           
+          window.countMarks = 0;
+
           var arduinoIcon = {
             url: arduinoIconUrl,
             size: new google.maps.Size(50, 33),
@@ -148,6 +158,7 @@
 
           window.addMarker = function(name, latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
+            window.countMarks = window.countMarks + 1;
 
             var marker = new google.maps.Marker({
               position: posicao,
@@ -188,6 +199,7 @@
 
           window.addMarkerRange = function(name, latitude, longitude){
             var posicao =  { lat: latitude, lng: longitude };
+            window.countMarks = window.countMarks + 1;
 
             var marker = new google.maps.Marker({
               position: posicao,
