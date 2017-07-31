@@ -59,6 +59,15 @@
                 topology.listDevices[i].coordinates.longitude);
             }
 
+            // ADD STROKE TO MARKS
+            var mapDom = document.getElementById("map");
+            var mapDivElements = mapDom.getElementsByTagName("div");
+            for(var i = 0; i < mapDivElements.length; i++){
+              var t = mapDivElements[i];
+              if(t.innerText.indexOf("Dev") === 0 || t.innerText.indexOf("Gateway") === 0){
+                t.classList.add("label-stroke");
+              }
+            }
           };
 
           reader.readAsText(file);  
