@@ -1,10 +1,9 @@
 .label-stroke{
-  color: black;
   text-shadow:
-    -1px -1px 0 white,  
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;
+    -1px -1px 0 #FFF,  
+    1px -1px 0 #FFF,
+    -1px 1px 0 #FFF,
+    1px 1px 0 #FFF !important;
 }
 #legend {
   font-family: Arial, sans-serif;
