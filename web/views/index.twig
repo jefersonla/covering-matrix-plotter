@@ -145,12 +145,11 @@
               icon: arduinoIcon,
               title: name,
               label: {
-                text: name,
+                text: "<b class=\".label-stroke\">" + name + "</b>",
                 fontWeight: 'bold',
                 fontFamily: '"Courier New", Courier,Monospace',
                 color: 'blue'
-              },
-              labelClass: "label-stroke"
+              }
             });
             
             marker.addListener('click', function(evt) {
@@ -172,12 +171,11 @@
               icon: raspIcon,
               title: name,
               label: {
-                text: name,
+                text: "<b class=\".label-stroke\">" + name + "</b>",
                 fontWeight: 'bold',
                 fontFamily: '"Courier New", Courier,Monospace',
                 color: 'green'
-              },
-              labelClass: "label-stroke"
+              }
             });
 
             var WIFI_RADIUS = 50;
